@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portafolio - Desarrollador</title>
+<style>
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0f23; /* negro azulado muy oscuro */
+    color: #e0e6f8; /* azul muy claro para texto */
+    line-height: 1.6;
+  }
+
+  a {
+    color: #1e90ff; /* azul vivo */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #63a4ff; /* azul más claro al hover */
+  }
+
+  header {
+    background-color: #10182f; /* negro azulado */
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+
+  nav a.active {
+    border-bottom: 3px solid #1e90ff;
+    padding-bottom: 3px;
+  }
+
+  main {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  section {
+    margin-bottom: 80px;
+  }
+
+  h1, h2 {
+    color: #1e90ff;
+    margin-bottom: 20px;
+  }
+
+  /* Inicio */
+  #inicio {
+    text-align: center;
+  }
+
+  #inicio p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto 30px;
+  }
+
+  /* Sección Planilla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #141f48;
+    color: #d7deff;
+    box-shadow: 0 0 15px rgba(30,144,255,0.3);
+  }
+
+  th, td {
+    padding: 14px 16px;
+    border: 1px solid #1e90ff;
+    text-align: left;
+  }
+
+  th {
+    background-color: #1e90ff;
+    color: #fff;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    table, th, td {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#exp-academica">Experiencia Académica</a>
+      <a href="#exp-personal">Experiencia Personal</a>
+    </nav>
+  </header>
+  <main>
+    <section id="inicio">
+      <h1>Bienvenido a Mi Portafolio</h1>
+      <p>Hola, soy un desarrollador apasionado por crear soluciones eficientes y modernas. Aquí podrás ver mis proyectos y experiencias que reflejan mi trayectoria y habilidades.</p>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos Destacados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Proyecto</th>
+            <th>Descripción</th>
+            <th>Tecnologías</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Web Portfolio</td>
+            <td>Portafolio personal con HTML, CSS y JS para mostrar proyectos.</td>
+            <td>HTML, CSS, JavaScript</td>
+          </tr>
+          <tr>
+            <td>App To-Do</td>
+            <td>Aplicación para gestionar tareas con funcionalidades CRUD.</td>
+            <td>React, Node.js, MongoDB</td>
+          </tr>
+          <tr>
+            <td>Blog Tecnológico</td>
+            <td>Blog con artículos técnicos y tutoriales para desarrolladores.</td>
+            <td>Gatsby, GraphQL</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="exp-academica">
+      <h2>Experiencia Académica</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Institución</th>
+            <th>Programa</th>
+            <th>Año</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Universidad Nacional</td>
+            <td>Ingeniería en Sistemas</td>
+            <td>2018 - 2023</td>
+          </tr>
+          <tr>
+            <td>Curso Udemy</td>
+            <td>JavaScript Moderno</td>
+            <td>2021</td>
+          </tr>
+          <tr>
+            <td>Escuela de Programación</td>
+            <td>Full Stack Developer Bootcamp</td>
+            <td>2022</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="exp-personal">
+      <h2>Experiencia Personal</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Empresa/Proyecto</th>
+            <th>Rol</th>
+            <th>Tiempo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Startup XYZ</td>
+            <td>Desarrollador Frontend</td>
+            <td>2021 - 2022</td>
+          </tr>
+          <tr>
+            <td>Proyecto Open Source</td>
+            <td>Colaborador</td>
+            <td>2020 - Presente</td>
+          </tr>
+          <tr>
+            <td>Freelance</td>
+            <td>Desarrollador Full Stack</td>
+            <td>2019 - 2021</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+<script>
+  // Agregar interactividad para actualizar clase "active" en navegación
+  const navLinks = document.querySelectorAll("nav a");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+      navLinks.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>
