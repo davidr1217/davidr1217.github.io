@@ -1,244 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portafolio de Desarrollador</title>
-<style>
-    /* Colors: muted blue-gray, dark charcoal, white */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio - Desarrolladora</title>
+  <style>
     :root {
-        --blue-gray: #2c3e50; /* muted strong blue-gray */
-        --charcoal: #1a1a1a; /* almost black charcoal */
-        --accent: #2980b9; /* strong vibrant blue accent */
-        --white: #ecf0f1; /* off-white for less harsh contrast */
-    }
-
-    * {
-        box-sizing: border-box;
+      --blue-gray: #2c3e50; /* muted strong blue-gray */
+      --charcoal: #1a1a1a; /* almost black charcoal */
+      --accent: #2980b9; /* strong vibrant blue accent */
+      --white: #ecf0f1; /* off-white for less harsh contrast */
     }
 
     body {
-        margin: 0;
-        font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: var(--charcoal);
-        color: var(--white);
-        line-height: 1.5;
-        font-weight: 500;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--charcoal);
+      color: var(--white);
+      scroll-behavior: smooth;
     }
 
     header {
-        background-color: var(--blue-gray);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.7);
-        position: sticky;
-        top: 0;
-        z-index: 10000;
+      background: var(--blue-gray);
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
     }
 
     nav {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 1rem 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 1rem;
-        user-select: none;
+      display: flex;
+      gap: 2.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
     }
 
-    .logo-section {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+    nav a {
+      text-decoration: none;
+      color: var(--white);
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.3s ease;
+      outline-offset: 4px;
     }
 
-    nav .logo {
-        font-size: 1.8rem;
-        color: var(--accent);
+    nav a:hover,
+    nav a:focus {
+      color: var(--accent);
     }
 
-    .profile-photo {
-        width: 50px;
-        height: 50px;
-        border-radius: 4px; /* sharper corner */
-        border: 3px solid var(--accent);
-        object-fit: cover;
-        box-shadow: 0 0 6px var(--accent);
-        transition: transform 0.3s ease;
-        cursor: pointer;
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
     }
-
-    .profile-photo:hover,
-    .profile-photo:focus {
-        transform: scale(1.1);
-        outline: none;
-        box-shadow: 0 0 12px var(--accent);
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 3rem;
-        margin: 0;
-        padding: 0;
-    }
-
-    nav ul li {
-        display: inline-block;
-    }
-
-    nav ul li a {
-        color: var(--white);
-        text-decoration: none;
-        padding: 0.3rem 0.5rem;
-        border-bottom: 2px solid transparent;
-        transition: border-color 0.3s ease, color 0.3s ease;
-        font-weight: 600;
-    }
-
-    nav ul li a:hover,
-    nav ul li a:focus {
-        border-bottom: 2px solid var(--accent);
-        color: var(--accent);
-        outline: none;
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
     }
 
     main {
-        max-width: 900px;
-        margin: 4rem auto;
-        padding: 0 1.5rem;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
     section {
-        background-color: var(--blue-gray);
-        border-radius: 6px;
-        margin-bottom: 3rem;
-        padding: 2rem 2.5rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-        color: var(--white);
-        font-weight: 400;
+      margin-bottom: 4rem;
     }
 
-    section h2 {
-        border-left: 5px solid var(--accent);
-        padding-left: 0.8rem;
-        margin-bottom: 1.2rem;
-        font-weight: 800;
-        font-size: 1.9rem;
-        letter-spacing: 1.2px;
-        user-select: none;
+    h2 {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-size: 1.8rem;
     }
 
-    ul {
-        padding-left: 1.25rem;
-        list-style-type: square;
+    .intro {
+      text-align: center;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto 3rem;
     }
 
-    p {
-        font-weight: 400;
-        font-size: 1.05rem;
+    .projects-list,
+    .education-list,
+    .experience-list {
+      list-style-type: none;
+      padding-left: 0;
     }
 
-    /* Smooth scroll */
-    html {
-        scroll-behavior: smooth;
+    .projects-list li,
+    .education-list li,
+    .experience-list li {
+      background: var(--blue-gray);
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      transition: background-color 0.3s ease;
+      cursor: default;
     }
 
-    /* Responsive */
+    .projects-list li:hover,
+    .education-list li:hover,
+    .experience-list li:hover {
+      background: var(--accent);
+      cursor: pointer;
+    }
+
+    .project-title,
+    .edu-title,
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--white);
+    }
+
+    .project-description,
+    .edu-institution,
+    .exp-detail {
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--white);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem 0;
+      color: var(--accent);
+      background-color: var(--charcoal);
+      border-top: 1px solid var(--blue-gray);
+    }
+
     @media (max-width: 600px) {
-        nav {
-            flex-direction: column;
-            gap: 1rem;
-            padding: 1rem;
-            font-size: 0.95rem;
-        }
-
-        nav ul {
-            flex-direction: column;
-            gap: 1rem;
-            width: 100%;
-            margin-top: 0;
-            justify-content: center;
-        }
-
-        nav ul li a {
-            padding: 0.6rem 0;
-            border-bottom: none;
-            border-left: 4px solid transparent;
-            transition: border-left-color 0.3s ease;
-        }
-
-        nav ul li a:hover,
-        nav ul li a:focus {
-            border-left: 4px solid var(--accent);
-            color: var(--accent);
-            outline: none;
-        }
-
-        main {
-            margin: 2rem 1rem;
-            padding: 0 1rem;
-        }
-
-        section {
-            padding: 1.6rem 1.8rem;
-            border-radius: 4px;
-        }
-
-        section h2 {
-            font-size: 1.5rem;
-            padding-left: 0.5rem;
-            border-left-width: 4px;
-        }
+      nav {
+        gap: 1.2rem;
+        font-size: 1rem;
+      }
+      main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+      }
     }
-</style>
+  </style>
 </head>
 <body>
-<header>
-    <nav>
-        <div class="logo-section">
-            <img class="profile-photo" src="https://via.placeholder.com/150" alt="Foto de perfil" tabindex="0" />
-            <div class="logo" tabindex="0">Mi Portafolio</div>
-        </div>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#experiencia-academica">Experiencia Académica</a></li>
-            <li><a href="#experiencia-personal">Experiencia Personal</a></li>
-        </ul>
+  <header>
+    <nav aria-label="Menú principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#academica">Experiencia Académica</a>
+      <a href="#personal">Experiencia Personal</a>
     </nav>
-</header>
-<main>
-    <section id="inicio" tabindex="0" aria-label="Sección de inicio">
-        <h2>Inicio</h2>
-        <p>¡Hola! Soy un desarrollador apasionado por crear soluciones digitales elegantes y eficientes. Bienvenido a mi portafolio donde encontrarás mis proyectos y experiencias.</p>
+  </header>
+  <main>
+    <section id="inicio" tabindex="-1">
+      <h2>Inicio</h2>
+      <p class="intro">Hola, soy una desarrolladora apasionada por crear soluciones digitales elegantes y eficientes. Aquí puedes conocer un poco más sobre mis proyectos y experiencia.</p>
     </section>
-    <section id="proyectos" tabindex="0" aria-label="Sección de proyectos">
-        <h2>Proyectos</h2>
-        <ul>
-            <li><strong>Proyecto 1:</strong> Aplicación web para gestión de tareas, creada con React y Node.js.</li>
-            <li><strong>Proyecto 2:</strong> Sitio web corporativo con diseño responsivo usando HTML, CSS y JavaScript.</li>
-            <li><strong>Proyecto 3:</strong> Aplicación móvil para seguimiento de hábitos, desarrollada con Flutter.</li>
-        </ul>
+    <section id="proyectos" tabindex="-1">
+      <h2>Proyectos</h2>
+      <ul class="projects-list">
+        <li>
+          <div class="project-title">Portfolio Web Personal</div>
+          <div class="project-description">Una página web responsiva que muestra mis habilidades, proyectos y experiencia usando HTML, CSS y JavaScript.</div>
+        </li>
+        <li>
+          <div class="project-title">App To-Do List</div>
+          <div class="project-description">Aplicación web para gestionar tareas diarias con funcionalidades CRUD usando React y localStorage.</div>
+        </li>
+        <li>
+          <div class="project-title">Blog con CMS</div>
+          <div class="project-description">Desarrollo de un blog dinámico con panel administrativo usando Node.js y MongoDB.</div>
+        </li>
+      </ul>
     </section>
-    <section id="experiencia-academica" tabindex="0" aria-label="Sección de experiencia académica">
-        <h2>Experiencia Académica</h2>
-        <ul>
-            <li><strong>Licenciatura en Ingeniería en Sistemas Computacionales</strong> - Universidad XYZ, 2018-2022</li>
-            <li><strong>Curso avanzado de desarrollo web</strong> - Plataforma ABC, 2021</li>
-            <li><strong>Certificación en JavaScript</strong> - Instituto DEF, 2020</li>
-        </ul>
+    <section id="academica" tabindex="-1">
+      <h2>Experiencia Académica</h2>
+      <ul class="education-list">
+        <li>
+          <div class="edu-title">Licenciatura en Ingeniería en Sistemas</div>
+          <div class="edu-institution">Universidad Nacional, 2018 - 2022</div>
+        </li>
+        <li>
+          <div class="edu-title">Cursos de Desarrollo Web</div>
+          <div class="edu-institution">Platzi y Udemy, 2020 - Presente</div>
+        </li>
+      </ul>
     </section>
-    <section id="experiencia-personal" tabindex="0" aria-label="Sección de experiencia personal">
-        <h2>Experiencia Personal</h2>
-        <ul>
-            <li>Trabajo como desarrollador frontend en Empresa GHI, creando funcionalidades interactivas para clientes.</li>
-            <li>Participación en hackathons y eventos de tecnología.</li>
-            <li>Colaboración en proyectos comunitarios de código abierto.</li>
-        </ul>
+    <section id="personal" tabindex="-1">
+      <h2>Experiencia Personal</h2>
+      <ul class="experience-list">
+        <li>
+          <div class="exp-title">Desarrolladora Freelance</div>
+          <div class="exp-detail">Proyecto de desarrollo y mantenimiento de páginas web para pequeñas empresas.</div>
+        </li>
+        <li>
+          <div class="exp-title">Voluntaria en ONG Tech</div>
+          <div class="exp-detail">Implementación de soluciones digitales para optimizar procesos internos.</div>
+        </li>
+      </ul>
     </section>
-</main>
+  </main>
+  <footer>
+    &copy; 2024 Portafolio de Desarrolladora. Todos los derechos reservados.
+  </footer>
 </body>
 </html>
